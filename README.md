@@ -53,6 +53,7 @@ src/main/java/com/pactomais/desafio
 ├── exception
 ├── repository
 ├── service
+├── transaction
 └── DesafioApplication
 ```
 
@@ -106,7 +107,7 @@ O `application.properties` não é versionado por conter configurações locais.
 Dentro da pasta do projeto:
 
 ```bash
-mvnw.cmd spring-boot:run
+mvn spring-boot:run
 ```
 
 A API estará disponível em `http://localhost:8080`.
@@ -308,23 +309,34 @@ O script SQL está disponível em:
 src/main/resources/schema.sql
 ```
 
+## Diferenciais implementados
+
+### Testes unitários
+
+O projeto possui testes unitários utilizando JUnit 5 e Mockito.
+
+Os testes implementados cobrem:
+
+- Depósito em conta
+- Saque em conta
+- Regra de negócio que impede saque acima do saldo permitido
+
+Atualmente, são três testes unitários implementados e aprovados.
+
+Para executar os testes pelo IntelliJ IDEA, basta executar a classe `ContaServiceTest`.
+
 ## Diferenciais não implementados
 
 Os seguintes diferenciais não foram implementados:
 
 - Rendimento mensal da conta poupança
 - Juros sobre saldo negativo
-- Testes unitários mais completos
 - Swagger/OpenAPI
 - Padronização avançada das respostas de erro
 
-A decisão foi priorizar os requisitos obrigatórios dentro do prazo do desafio,
-garantindo o funcionamento das principais funcionalidades.
+A decisão foi priorizar os requisitos obrigatórios dentro do prazo do desafio, garantindo o funcionamento das principais funcionalidades.
 
-Como evolução, o rendimento e os juros seriam implementados através de
-rotinas específicas que atualizariam o saldo e registrariam as operações
-como transações. Testes unitários cobririam as principais regras de negócio,
-enquanto o Swagger documentaria visualmente os endpoints.
+Como evolução, o rendimento e os juros poderiam ser implementados através de rotinas específicas que atualizariam o saldo e registrariam as operações como transações. O Swagger poderia ser utilizado para documentar visualmente os endpoints.
 
 ## Considerações finais
 
