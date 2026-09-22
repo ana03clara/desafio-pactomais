@@ -2,6 +2,7 @@ package com.pactomais.desafio.service;
 
 import com.pactomais.desafio.entity.Conta;
 import com.pactomais.desafio.entity.Correntista;
+import com.pactomais.desafio.entity.ContaCorrente;
 import com.pactomais.desafio.repository.TransacaoRepository;
 import com.pactomais.desafio.repository.CorrentistaRepository;
 import com.pactomais.desafio.repository.ContaRepository;
@@ -72,13 +73,13 @@ public class ContaService {
             throw new RegraNegocioException("O valor de saque deve ser maior que zero");
         }
 
-        if (conta instanceof com.pactomais.desafio.entity.ContaCorrente){
-            com.pactomais.desafio.entity.ContaCorrente contaCorrente = (com.pactomais.desafio.entity.ContaCorrente) conta;
+        if (conta instanceof ContaCorrente){
+            ContaCorrente contaCorrente = (ContaCorrente) conta;
 
             if (valor > conta.getSaldo() + contaCorrente.getLimite()){
                 throw new RegraNegocioException("Saldo e limite insuficientes");
             }
-        } else{
+        } else {
             if (valor > conta.getSaldo()){
                 throw new RegraNegocioException("Saldo insuficiente");
             }
