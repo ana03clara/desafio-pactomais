@@ -6,7 +6,7 @@ import com.pactomais.desafio.entity.ContaCorrente;
 import com.pactomais.desafio.repository.TransacaoRepository;
 import com.pactomais.desafio.repository.CorrentistaRepository;
 import com.pactomais.desafio.repository.ContaRepository;
-import com.pactomais.desafio.transaction.Transacao;
+import com.pactomais.desafio.entity.Transacao;
 import com.pactomais.desafio.exception.RegraNegocioException;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,4 @@
-package com.pactomais.desafio.transaction;
-
-import com.pactomais.desafio.entity.Conta;
+package com.pactomais.desafio.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

@@ -1,6 +1,6 @@
 package com.pactomais.desafio.service;
 
-import com.pactomais.desafio.transaction.Transacao;
+import com.pactomais.desafio.entity.Transacao;
 import com.pactomais.desafio.repository.TransacaoRepository;
 import org.springframework.stereotype.Service;
 

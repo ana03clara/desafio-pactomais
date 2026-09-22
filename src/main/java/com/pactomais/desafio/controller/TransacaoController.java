@@ -1,7 +1,7 @@
 package com.pactomais.desafio.controller;
 
 import com.pactomais.desafio.service.TransacaoService;
-import com.pactomais.desafio.transaction.Transacao;
+import com.pactomais.desafio.entity.Transacao;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
